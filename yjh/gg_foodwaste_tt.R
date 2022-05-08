@@ -52,7 +52,8 @@ gg_foodwaste_tt <- subset(gg_foodwaste_tt, select = -c(locgov_code))
 ## "year", "month", "day"는 날짜 타입으로 변경
 
 # save dataframe
-write.csv(gg_foodwaste_tt, "./data/gg_foodwaste_tt.csv", row.names = F)
+write.csv(gg_foodwaste_tt, "./data/gg_foodwaste_tt.csv", row.names = F,
+          fileEncoding = "UTF-8")
 
 
 
