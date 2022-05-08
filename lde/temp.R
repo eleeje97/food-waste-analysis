@@ -1,5 +1,6 @@
 library(httr)
 library(dplyr)
+library(jsonlite)
 
 # api에 보낼 파라미터 값
 auth <- read.table("miniProject/data/auth_data.txt")
