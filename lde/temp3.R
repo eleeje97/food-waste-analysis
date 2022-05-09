@@ -37,4 +37,5 @@ waste1920 <- cbind(select(waste19, c(시군구, 배출량)), select(waste20, 배
 colnames(waste1920) <- c("시군구", "2019", "2020")
 waste1920$rate <- (waste1920$`2020`-waste1920$`2019`)/waste1920$`2019` * 100
 
-write.csv(waste1920, "data/waste1920.csv", row.names = F)
+# csv 파일로 저장
+#write.csv(waste1920, "data/waste1920.csv", row.names = F)
