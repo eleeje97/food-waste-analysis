@@ -1,3 +1,5 @@
+### 자원순환정보시스템 전국폐기물 발생현황 데이터 2019-2020 ###
+
 waste19_raw <- read_excel("data/waste2019.xlsx", sheet = 6)
 waste19 <- waste19_raw %>% select(시도, 시군구, "폐기물 종류", "...5", "2019년 발생량")
 colnames(waste19) <- c("시도", "시군구", "폐기물종류", "폐기물종류_세부", "배출량")

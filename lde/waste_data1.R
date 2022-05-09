@@ -1,15 +1,20 @@
+### 전국 폐기물 API ###
+
 library(httr)
 library(dplyr)
 library(jsonlite)
 
+# Working Directory 변경
+setwd("c:/danalee/food-waste-analysis/lde/")
+
 # api에 보낼 파라미터 값
-auth <- read.table("miniProject/data/auth_data.txt")
+auth <- read.table("data/auth_data.txt")
 url <- auth[1,2]
 api_key <- auth[2,2]
 usrId <- auth[3,2]
 
 # 경기도 시군구 행정구역 리스트
-gyeonggi_sigungu <- readLines("miniProject/data/gyeonggi_sigungu.txt", encoding = 'UTF-8')
+gyeonggi_sigungu <- readLines("data/gyeonggi_sigungu.txt", encoding = 'UTF-8')
 gyeonggi_sigungu <- c("경기도", gyeonggi_sigungu)
 
 # api 요청 결과 값을 데이터프레임으로 반환하는 함수

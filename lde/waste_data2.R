@@ -1,3 +1,5 @@
+### 자원순환정보시스템 전국폐기물 발생현황 데이터 2017-2020 ###
+
 # Working Directory 변경
 setwd("c:/danalee/food-waste-analysis/lde/")
 
@@ -76,8 +78,6 @@ ggplot(data = waste_data_1920,
        aes(x = 시군구, y = 배출량, fill = 년도)) +
   geom_col(position = "dodge") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
-
-# 시군구별 증감률
 
 
 
