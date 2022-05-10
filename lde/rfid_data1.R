@@ -92,9 +92,9 @@ for (i in 1:length(year)) {
 
 
 rfid_swpc <- rfid_swpc %>% select(disYear, disMonth, cityCode, citySggName, disQuantity)
-rfid_swpc <- rfid_swpc %>% arrange(disYear)
 temp <- rfid_swpc %>% group_by(disYear, disMonth, cityCode, citySggName) %>% 
   summarise(disQuantity=sum(disQuantity))
+temp <- temp %>% arrange(disYear)
 rfid_swpc_2017 <- temp %>% filter(disYear==2017)
 rfid_swpc_2018 <- temp %>% filter(disYear==2018)
 rfid_swpc_2019 <- temp %>% filter(disYear==2019)
@@ -103,7 +103,7 @@ rfid_swpc_2021 <- temp %>% filter(disYear==2021)
 
 
 # csv 파일로 저장
-# write.csv(rfid_swpc, "data/rfid_swpc.csv", row.names = F)
+write.csv(temp, "data/rfid_swpc.csv", row.names = F)
 # write.csv(rfid_swpc_2017, "data/rfid_swpc_2017.csv", row.names = F)
 # write.csv(rfid_swpc_2018, "data/rfid_swpc_2018.csv", row.names = F)
 # write.csv(rfid_swpc_2019, "data/rfid_swpc_2019.csv", row.names = F)
