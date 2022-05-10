@@ -20,7 +20,9 @@ sgg_2020_total <- subset(sgg_waste1_grouped, select = c(signgu, total))
 # save dataset
 write.csv(sgg_2020_total, "./data/sgg_waste_2020.csv", row.names = F)
 
-
-
+# 음식물전용봉투를 사용하지 않고 생활(가정) 배출량이 증가했는지
+waste_nobag <- sgg_waste1 %>% filter(type == "음식물류 폐기물") |> 
+  
+waste_wbag <- sgg_waste3 |> filter(type == "음식물류 폐기물")
 
 
