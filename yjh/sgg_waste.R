@@ -21,8 +21,24 @@ sgg_2020_total <- subset(sgg_waste1_grouped, select = c(signgu, total))
 write.csv(sgg_2020_total, "./data/sgg_waste_2020.csv", row.names = F)
 
 # 음식물전용봉투를 사용하지 않고 생활(가정) 배출량이 증가했는지
-waste_nobag <- sgg_waste1 %>% filter(type == "음식물류 폐기물") |> 
-  
-waste_wbag <- sgg_waste3 |> filter(type == "음식물류 폐기물")
+waste_nobag <- sgg_waste1 %>% filter(type == "음식물류 폐기물" & sido == "경기") |> 
+  select(signgu, waste_year_2020)
+waste_wbag <- sgg_waste3 |> filter(type == "음식물류 폐기물" & sido == "경기") |> 
+  select(signgu, waste_day_2019)
+
+waste_total <- merge(waste_nobag, waste_wbag, by = "signgu")
+waste_total$waste_day_2020 <- waste_total$waste_year_2020 / 365
+waste_total$rate <- (waste_total$waste_day_2020 - waste_total$waste_day_2019) / waste_total$waste_day_2019 * 100
+waste_total <- waste_total[, -2]
+
+# save dataset
+write.csv(waste_total, "./data/sgg_waste_nobag.csv", row.names = F)
+
+# library(stringr)
+# a <- str_split(sgg_waste3$type, " ", simplify = T)
+
+
+
+
 
 
