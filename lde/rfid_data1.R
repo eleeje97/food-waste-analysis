@@ -103,7 +103,7 @@ rfid_swpc_2021 <- temp %>% filter(disYear==2021)
 
 
 # csv 파일로 저장
-write.csv(temp, "data/rfid_swpc.csv", row.names = F)
+# write.csv(temp, "data/rfid_swpc.csv", row.names = F)
 # write.csv(rfid_swpc_2017, "data/rfid_swpc_2017.csv", row.names = F)
 # write.csv(rfid_swpc_2018, "data/rfid_swpc_2018.csv", row.names = F)
 # write.csv(rfid_swpc_2019, "data/rfid_swpc_2019.csv", row.names = F)
