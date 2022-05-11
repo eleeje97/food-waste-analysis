@@ -40,3 +40,6 @@ vignettes/*.pdf
 
 # Auth files
 lde/data/auth_data.txt
+
+# .DS_Store
+*.DS_Store
