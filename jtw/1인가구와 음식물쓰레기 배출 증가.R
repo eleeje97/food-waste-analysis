@@ -5,7 +5,7 @@ library(ggplot2)
 library(readxl)
 food <- read.csv("C:/Rstudy/week4/경기도 인당 음식물쓰레기.csv")
 people <- read.csv("C:/Rstudy/week4/경기도 세대당 인구수1.csv")
-
+people
 foodpeople <- merge(food, people, by = "시군명")
 
 foodpeople <-rename(foodpeople, c(인당발생량 = X1일1인발생량.kg., 
